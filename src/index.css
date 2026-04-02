@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 198 50% 98%;
+    --foreground: 200 29% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 29% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 29% 16%;
+
+    --primary: 179 88% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 191 70% 88%;
+    --secondary-foreground: 200 29% 16%;
+
+    --muted: 194 34% 93%;
+    --muted-foreground: 199 18% 39%;
+
+    --accent: 25 96% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 14 95% 58%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 153 68% 34%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 193 25% 86%;
+    --input: 193 25% 86%;
+    --ring: 179 88% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+    --shadow-elevated: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 40px -12px hsl(179 88% 35% / 0.35);
+
+    --gradient-primary: linear-gradient(135deg, hsl(179 88% 35%), hsl(190 77% 41%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 96% 56%), hsl(12 91% 58%));
+    --gradient-warm: linear-gradient(135deg, hsl(26 100% 58%), hsl(9 92% 60%));
+    --gradient-hero: linear-gradient(170deg, hsl(198 50% 98%) 0%, hsl(191 61% 92%) 100%);
+  }
+
+  .dark {
+    --background: 202 45% 7%;
+    --foreground: 210 40% 96%;
+    --card: 202 40% 10%;
+    --card-foreground: 210 40% 96%;
+    --popover: 202 40% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 179 74% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 191 41% 24%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 200 29% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 25 95% 56%;
+    --accent-foreground: 0 0% 100%;
+    --border: 201 24% 24%;
+    --input: 201 24% 24%;
+    --ring: 179 74% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background-image: radial-gradient(circle at 10% 10%, hsl(178 80% 50% / 0.06), transparent 35%),
+      radial-gradient(circle at 90% 15%, hsl(25 96% 56% / 0.12), transparent 38%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
