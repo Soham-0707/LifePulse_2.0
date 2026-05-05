@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Proxy /api/* to Netlify Functions so the frontend call to /api/wellness-chat
+# is forwarded to /.netlify/functions/wellness-chat without changing client code.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# SPA catch-all: serve index.html for every route so React Router works.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
